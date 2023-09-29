@@ -7,7 +7,7 @@ class Pokemon {
     }
     attackPokemon(Pokemon) {
 
-        Pokemon.PV = Pokemon.PV - this.atk + this.def
+        Pokemon.PV = Pokemon.PV - this.atk + Pokemon.def
     }
 
 }
@@ -20,16 +20,16 @@ let Noctali = new Pokemon ( "Noctali", 30, 10, 95 )
 while ( Noctali.PV >= 0 || Rondoudou.PV >= 0 ) {
     Rondoudou.attackPokemon ( Noctali )
 
-    console.log ( Noctali.PV , Noctali.name)
+    console.log (Noctali.name + " a " + Noctali.PV + " PV.")
     if ( Noctali.PV <= 0){
-        console.log ( Rondoudou.name + " win " )
+        console.log ( Rondoudou.name + " a win " )
         break
     }
     Noctali.attackPokemon ( Rondoudou )
 
-    console.log ( Rondoudou.PV , Rondoudou.name)
+    console.log ( Rondoudou.name + " a " + Rondoudou.PV +  " PV ")
     if ( Rondoudou.PV <= 0){
-        console.log (Noctali.name + " win ")
+        console.log (Noctali.name + " a win ")
         break
     }
 }
